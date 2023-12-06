@@ -10,4 +10,21 @@
 
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
 
+  <div class="container mt-3">
+    <div class="row">
+      <div class="col">
+        <h2>Order Details</h2>
+        <p><strong>Email:</strong> <%= @order.email %></p>
+        <div class="mt-4">
+          <h4>Items in your order:</h4>
+          <% @order.line_items.each do |line_item| %>
+            <%= render 'line_item', line_item: line_item %>
+          <% end %>
+          <hr>
+          <p class="text-right"><strong>Total Amount:</strong> <%= number_to_currency @order.total_amount %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </section>
