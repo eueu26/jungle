@@ -17,6 +17,17 @@
     }
   }
 
+  .sold-out {
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    background-color: red;
+    color: white;
+    padding: 5px;
+    font-size: 0.9em;
+  }
+  
+
   .product-detail {
     display: grid;
     gap: 1.5em;

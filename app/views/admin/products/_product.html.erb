@@ -14,7 +14,11 @@
     <%= number_to_currency(product.price) %>
   </td>
   <td>
-    <%= product.quantity %>
+    <% if product.quantity.zero? %>
+      <div class="badge sold-out">Sold Out</div>
+    <% else %>
+      <%= product.quantity %>
+<% end %>
   </td>
   <td>
     <%= link_to fa_icon('trash'), [:admin, product], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
